@@ -1,0 +1,72 @@
+/// Color declarations
+$design-color: rgb(270, 70, 59);
+
+body {
+    height: 500px;
+    width: 350px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card {
+    height: 500px;
+
+    .date {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $design-color;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        margin-top: 15px;
+        margin-right: 15px;
+        color: white;
+        font-size: 105%;
+    }
+
+    .india {
+        background-image: url(../images/india.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60%;
+
+        .content {
+            margin-top: 250px;
+            line-height: 90%;
+            font-size: 18px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+
+            .square {
+                width: 20%;
+                height: auto;
+                background-color: $design-color;
+                padding: {
+                    right: 10px;
+                    left: 10px;
+                    top: 5px;
+                    bottom: 5px;
+                }
+                margin-top: 28px;
+            }
+        }
+    }
+
+}
