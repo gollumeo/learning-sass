@@ -9,7 +9,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .card {
@@ -46,7 +46,6 @@ body {
   margin-top: 250px;
   line-height: 90%;
   font-size: 18px;
-  color: white;
   display: flex;
   flex-direction: column;
 }
@@ -59,4 +58,13 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 28px;
+  color: white;
+}
+.card .india .content .subtitle h1 {
+  color: black;
+  font-weight: 100;
+}
+.card .india .content h2 {
+  color: rgb(255, 70, 59);
+  font-weight: normal;
 }/*# sourceMappingURL=style.css.map */
