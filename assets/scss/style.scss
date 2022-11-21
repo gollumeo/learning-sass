@@ -1,83 +1,163 @@
-/// Color declarations
+/// Color declaration
 $design-color: rgb(270, 70, 59);
 
-body {
-    height: 500px;
-    width: 350px;
-    border: 1px solid black;
-    margin: 0 auto;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: rgb(211, 211, 211);
+}
+
 .card {
-    height: 500px;
+    width: 320px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    transition: 300ms ease-in-out transform;
+}
 
-    .date {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: $design-color;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 0;
-        margin-top: 15px;
-        margin-right: 15px;
-        color: white;
-        font-size: 105%;
+.date {
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    height: 50px;
+    width: 50px;
+    background-color: $design-color;
+    color: white;
+
+    font: {
+        weight: 300;
+        size: 14px;
     }
 
-    .india {
-        background-image: url(../images/india.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 60%;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 8px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
 
-        .content {
-            margin-top: 250px;
-            line-height: 90%;
-            font-size: 18px;
-            display: flex;
-            flex-direction: column;
+.india_img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: absolute;
+    transition: 300ms ease-in-out transform;
+    transition: 300ms ease-in-out transform;
+}
 
-            .square {
-                width: 20%;
-                height: auto;
-                background-color: $design-color;
-                padding: {
-                    right: 10px;
-                    left: 10px;
-                    top: 5px;
-                    bottom: 5px;
-                }
-                margin-top: 28px;
-                color: white; 
-            } 
+.content {
+    position: absolute;
+    top: 60%;
+    background-color: white;
+    transition: 300ms ease-in-out transform;
+}
 
-            .subtitle h1{
-                color: black;
-                font-weight: 100;
-                
-            }
+.square {
+    background-color: $design-color;
+    height: auto;
+    width: 75px;
+    margin-top: -25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
-            h2 {
-                color: $design-color;
-                font-weight: normal;
-            }
-        }
+.square p {
+    margin-left: 5px;
+    color: white;
+    font-weight: 200;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+
+    img[alt="clock"] {
+        width: 11px;
+        height: 11px;
+        object-fit: cover;
+        margin-top: 2px;
+        margin-right: 2px;
+        margin-top: 2px;
+        margin-left: 15px;
+        opacity: 0.8;
     }
 
+    img[alt="comments"] {
+        width: 12px;
+        height: 12px;
+        object-fit: cover;
+        margin-top: 2px;
+        margin-right: 5px;
+        opacity: 0.8;
+    }
+
+    p {
+        text-align: left;
+        margin-bottom: 25px;
+        font-size: 13px;
+        margin-right: 10px;
+        color: rgba(39, 39, 39, 0.445)
+    }
+}
+
+.subtitle {
+    h1 {
+        font-size: 1.5rem;
+        padding-top: 20px;
+        padding-left: 25px;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: $design-color;
+        padding-left: 25px;
+    }
+}
+
+.text_anim p {
+    font-size: .9rem;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 30px;
+    text-align: justify;
+    opacity: 0;
+    transition: 300ms ease-in-out transform;
+    line-height: 1.5rem;
+
+}
+
+.card:hover .content {
+    transform: translateY(-65%);
+    transition: 300ms ease-in-out transform;
+}
+
+.card:hover .text_anim p {
+    opacity: 1;
+    transition: 300ms ease-in-out opacity;
+}
+
+.card:hover {
+    box-shadow: 0 5px 20px black;
+    transition: 150ms ease-in-out box-shadow;
+}
+
+.card:hover .india_img>img {
+    transform: scale(1.2);
+    filter: opacity(0.8);
 }
